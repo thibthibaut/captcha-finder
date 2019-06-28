@@ -18,9 +18,16 @@ def solve(path):
     # Dilate
     kernel = np.ones((3,3),'uint8')
     img = cv2.dilate(img, kernel )
+    img = cv2.dilate(img, kernel )
 
+    # Erode
+    img = cv2.erode(img, kernel )
+    img = cv2.erode(img, kernel )
 
-    return (ts.image_to_string(img, lang='eng', config="--psm 6 --oem 1 -c load_system_dawg=0 -c load_freq_dawg=0 -c tessedit_char_whitelist=ABCDEFGHIJKLMNPRSTUVWXYZabcdefghijklmnprstuvwxyz123456789"))
+    tesseract_config = r"""-c tessedit_char_whitelist=123456789abcdefghijklmnprstuvwxyzABCDEFGHIJKLMNPRSTUVWXYZ -c load_system_dawg=0 -c load_freq_dawg=0 --psm 6 --oem 1"""
+    tesseract_language = "eng"
+
+    return ts.image_to_string(img, lang=tesseract_language, config=tesseract_config)
 
     # cv2.imwrite('./test.png', img)
 
