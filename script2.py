@@ -101,24 +101,21 @@ def is_captcha_valid(strung):
 #############################################
 # Header data
 #############################################
+
+
+
 cookies = {
-    'PHPSESSID': 'im94nqo48865gg1f3c45d6m1c4',
-    'rxVisitor': '1561627858362O8PN3MU6169DJ2S4ORR40UJJ726SNIGA',
-    'incap_ses_466_2043128': '28pLRlpMEEtDRIopK5N3BmWsFF0AAAAAnm6YVY+MKnLmx4ApsWMETw==',
-    'nlbi_2043128': '5HtZFgs6MT9RXmNHqtI6oAAAAADIZ3I5xL6/2jAiWAtbyshx',
-    'visid_incap_651915': '9UE3OI2KSz+Y4yaM6ytYP8C8FF0AAAAAQUIPAAAAAABVPzeX7xMx9010y8EpofS7',
-    'incap_ses_729_651915': 'vL91akpUK2gO2jBfo+4dCsC8FF0AAAAA6EWj+bUpNbWVPM2YLK1iYw==',
-    'incap_ses_770_2043128': 'KWQeOVuv0FK2q6fYupevCvDRFF0AAAAANfZSxK0NESjM+MWpDD+Vsw==',
-    'incap_ses_868_651915': 'TFctQoKaoVtRONjtNcILDCnMFV0AAAAA8TxHEzylW3bk508YjJx0VA==',
-    'incap_ses_1177_651915': '8kVqdO/E8jv0eEvDkotVECrMFV0AAAAAdqYO1Y1LzVYV3INbQ61QrQ==',
-    'incap_ses_764_2043128': '5HPEd1080CmkCdT8wkaaCu/xFV0AAAAAvWrQaOhByMnxPkQ5vyCTdA==',
-    'A10_Insert-20480': 'ANAFOJAKFAAA',
-    'visid_incap_2043128': 'b/GX5d/WTyaoFZ2iZqWvWu2HE10AAAAAR0IPAAAAAACAbiqNAU2IKsTh4ozTAGyPT814yL/xBFUj',
+    'A10_Insert-20480': 'BAAFOJAKFAAA',
+    'nlbi_2043128': 'y4DZSrZy1gUpC23HqtI6oAAAAACyWIoFH4Gvp5+6jwKe2fYt',
+    'incap_ses_466_2043128': 'P7PkV7OGHACJIvUiMpN3BqA3LF0AAAAAwti47jIOn60l8mv55/c5Jg==',
+    'rxVisitor': '1563178910945KAI3VNS8GTVPDVG2EC1B0LES9SR3N2R6',
+    'visid_incap_2043128': 'EUDbftCoS/OdSwTx6QvV6KA3LF0AAAAAQkIPAAAAAACAdomNAYSmsTJ2oCGkapc0FsjvAuc+HXS+',
+    'PHPSESSID': 'n3gdhi074dttm350ck82122p07',
     'dtLatC': '3',
-    'dtPC': '1$519296889_561h-vCOEHPBOAWOOIAIMKHHHSONAPMAPGDCLN',
-    'rxvt': '1561721102989|1561718688624',
-    'dtSa': 'true%7CC%7C-1%7CValider%7C-%7C1561719304473%7C519296889_561%7Chttps%3A%2F%2Fwww.referendum.interieur.gouv.fr%2Fconsultation_5Fpublique%2F8%2FT%2FTQ%7CR%C3%A9f%C3%A9rendum%20d%27initiative%20partag%C3%A9e%7C1561719302990%7C',
-    'dtCookie': '1$3C268066F689499D606B8589E4F353DD|7b801f37abff0e14|1',
+    'dtPC': '1$178968378_880h-vPFIJCKNOILAEOABLNDBUAMJSMPILFNPO',
+    'rxvt': '1563180774457|1563178910953',
+    'dtSa': 'true%7CC%7C-1%7CValider%7C-%7C1563178974962%7C178968378_880%7Chttps%3A%2F%2Fwww.referendum.interieur.gouv.fr%2Fconsultation_5Fpublique%2F8%2FA%2FAB%7CR%C3%A9f%C3%A9rendum%20d%27initiative%20partag%C3%A9e%7C1563178974458%7C',
+    'dtCookie': '1$F0FB3E579C91D14EF26D9E9C9EAF3FF9|7b801f37abff0e14|1',
 }
 
 headers = {
@@ -129,9 +126,13 @@ headers = {
     'Content-Type': 'application/x-www-form-urlencoded',
     'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.38 Safari/537.36',
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
-    'Referer': 'https://www.referendum.interieur.gouv.fr/consultation_publique/8/T/TQ',
+    'Referer': 'https://www.referendum.interieur.gouv.fr/consultation_publique/8/A/AB',
     'Accept-Encoding': 'gzip, deflate, br',
     'Accept-Language': 'en-US,en;q=0.9,fr;q=0.8',
+}
+
+data = {
+  'form[captcha]': '9srkrzy',
 }
 
 
@@ -191,7 +192,7 @@ for ml in main_letters:
 
                 data = {
                   'form[captcha]': captcha_string,
-                  'form[_token]': 'm6QNLFA1YZNo6j0UGhoBpJDklht0090b_XIy3gFfKh4'
+                  'form[_token]': 'ztmynxnQiZ37GIvZvA2ytqLcAPrSurRTPan7LqONCkM'
                 }
 
                 response = requests.post('https://www.referendum.interieur.gouv.fr/consultation_publique/8/{}'.format(url_data), headers=headers, params=params, cookies=cookies, data=data)
